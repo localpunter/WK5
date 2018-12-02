@@ -3,17 +3,12 @@
 # Carry out dynamic testing on the code below.
 # Correct the errors below that you spotted in task 1.
 
-# require_relative('card.rb')
+require_relative('card.rb')
 class CardGame
-  attr_reader :suit, :value
+ 
 
-def initialize(suit, value)
-  @suit = suit
-  @value = value;
-end
-
-  def checkforAce(card)
-    if card == 1
+  def check_for_ace(card)
+    if card.value == 1
       return true
     else
       return false
@@ -21,7 +16,7 @@ end
   end
 
   def highest_card(card1, card2)
-    if card1 > card2
+    if card1.value > card2.value
       return card1
     else
       card2
@@ -32,9 +27,8 @@ end
     total = 0
     for card in cards
       total += card.value
-      print card.to_s
+    end
       return "You have a total of" + total.to_s
     end
-  end
 
 end
